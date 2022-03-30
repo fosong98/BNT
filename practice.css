@@ -46,10 +46,6 @@
   transition-delay: 800ms;
 }
 
-#loader > div {
-  transform: translateX(-100%);
-}
-
 body:not(.hidden).reveal #loader > div {
   transform: translateX(-100%);
 }

@@ -1,4 +1,7 @@
 window.addEventListener("load", start, false);
+
 function start() {
-  document.body.setAttribute("class", "reveal");
+  setTimeout(()=>{
+  document.body.setAttribute("class", "reveal");},
+  1000);
 }
