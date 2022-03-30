@@ -1,0 +1,51 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#choice {
+  height: 30%;
+}
+
+#flex {
+  height: 100%;
+  display: flex;
+  transition: all 1s;
+}
+
+#test {
+  height: 100%;
+  padding-top: 10%;
+  text-align: center;
+  width: 50%;
+  flex-grow: 1;
+  transition: all 0.2s;
+}
+
+#practice {
+  float: right;
+  text-align: center;
+  padding-top: 10%;
+  height: 100%;
+  width: 50%;
+  transition: all 0.2s;
+}
+
+#practice:hover {
+  width: 60%;
+}
+
+#test:hover {
+  width: 60%;
+}
+
+.custom-file {
+  margin-top: 2%;
+}
+
+#choice {
+  margin-top: 2%;
+}
+
+/* ******************************* */

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+  </head>
+  <script>
+    function start() {
+      document.getElementById("test").innerText = localStorage.getItem("0");
+    }
+    window.addEventListener("load", start, false);
+  </script>
+  <body>
+    <h1 id="test"></h1>
+  </body>
+</html>
