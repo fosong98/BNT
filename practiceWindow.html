@@ -1,36 +1,22 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
-<head>
-  <title>practice</title>
+<head lang="ko">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="practice.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="practice.js"></script>
+  <script src="practiceWindow.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+  <title>exercise</title>
 </head>
 
 <body>
-  <div id="loader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <button id="choose_all" onclick="chooseAll()" class="btn-danger">모두선택</button>
-  <button id="release_all" onclick="releaseAll()" class="btn-danger">모두선택해제</button>
-  <button id="confirm" onclick="confirm()" class="btn-danger">결정!</button>
   <button id="goBack" onclick="goBack()" class="btn-danger">뒤로</button>
-  <div id="plants" class="container-fluid">
-
-  </div>
+  <h2 id="name"></h2>
+  <div id="blanks"></div>
 </body>
 
 </html>

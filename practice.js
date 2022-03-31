@@ -1,13 +1,20 @@
 window.addEventListener("load", start, false);
+window.addEventListener("load", reload, false);
 
 function start() {
   setTimeout(()=>{
   document.body.setAttribute("class", "reveal");},
   500);
 
+  setTimeout(()=>{
+    document.getElementById("plants").classList.add("visible");
+  }, 1700);
+
   var plants = document.getElementById("plants");
 
-  for (var i = 1; i <= localStorage.length; ++i) {
+  var count = localStorage.getItem("ending");
+
+  for (var i = 0; i < count; ++i) {
     var plant = document.createElement("div");
     plant.id = i.toString();
     plant.className = "plant bg-primary";
@@ -59,5 +66,35 @@ function releaseAll() {
     var t = release.item(i); 
     if (t.classList.contains("bg-success"))
       t.classList.remove("bg-success");
+  }
+}
+
+function confirm() {
+  var count = localStorage.getItem("ending");
+  var plants = document.getElementsByClassName("plant");
+  var index = count;
+  for (var i = 0; i < count; ++i) {
+    console.log(plants[i].classList.toString());
+    if (plants[i].classList.contains("bg-success")) {
+      var val = plants.item(i).getAttribute("value");
+      localStorage.setItem(parseInt(index), val);
+      index++;
+    }
+  }
+  window.location.replace("practiceWindow.html");
+}
+
+function goBack() {
+  var length = localStorage.length;
+  for (var i = localStorage.getItem("ending"); i < length; ++i) {
+    localStorage.removeItem(i);
+  }
+  window.location.replace("index.html");
+}
+
+function reload() {
+  var length = localStorage.length;
+  for (var i = localStorage.getItem("ending"); i < length; ++i) {
+    localStorage.removeItem(i);
   }
 }
