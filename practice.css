@@ -1,3 +1,26 @@
+.container-fluid {
+  width: fit-content;
+  position: relative;
+}
+
+.plant {
+  height: 120px;
+  text-align: center;
+  display: inline-block;
+  width: 33%;
+  max-width: 130px;
+  padding-top: 45px;
+  color: white;
+  position: relative;
+}
+
+.plant:after {
+  content: "";
+  display: block;
+  padding-bottom: 20%;
+}
+
+/* ***********창 전환 효과************** */
 #loader {
   position: fixed;
   top: 0;
