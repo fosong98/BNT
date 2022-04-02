@@ -31,21 +31,56 @@ function chooseOne() {
 function uploading(index) {
   var obj = JSON.parse(plants[index]);
   var k = Object.keys(obj);
-  var blanks = document.getElementById("blanks");
   for (var i = 0; i < k.length; ++i) {
     var key = k[i];
     if (key == "Cultivar")
       document.getElementById("name").innerText = obj[key];
     else {
-      var label = document.createElement("label");
-      var val = document.createElement("input");
-      val.type = "text";
-      label.innerText = key;
-      val.setAttribute("answer", obj[key]);
-
-      label.append(val);
-      blanks.append(label);
+      makeBlank(key, obj[key]);
     }
+  }
+}
+
+function makeBlank(key, answer) {
+  var blanks = document.getElementById("blanks");
+
+  var blank = document.createElement("div");
+
+  var keyName = document.createElement("p");
+  keyName.innerText = key;
+
+  var input = document.createElement("input");
+  input.type = "text";
+  input.classList.add("form-control");
+  input.setAttribute("ans", answer);
+
+  var submit = document.createElement("button");
+  submit.classList.add("btn-primary");
+  submit.addEventListener("click", submitBlank, false);
+  
+  var clear = document.createElement("button");
+
+  var ans = document.createElement("p");
+  
+  blank.append(keyName);
+  blank.append(input);
+  blank.append(submit);
+  blank.append(clear);
+  blank.append(ans);
+  blanks.append(blank);
+}
+
+function submitBlank() {
+  var blank = event.target.previousSibling;
+  var ans = event.target.nextSibling.nextSibling;
+
+  if (blank.value == "")
+    blank.value = blank.getAttribute("ans");
+  else if (blank.value == blank.getAttribute("ans"))
+    blank.classList.add("collect");
+  else {
+    blank.classList.add("incollect");
+    ans.innerText = blank.getAttribute("ans");
   }
 }
 
