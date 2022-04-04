@@ -5,23 +5,19 @@
 
 
 .plant {
-  height: 120px;
+  height: 100px;
+  padding: 21px;
   font-size: 100%;
-  text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items:stretch;
   width: 33%;
   max-width: 130px;
-  padding-top: 45px;
   color: white;
   position: relative;
   transition: transform 500ms;
 }
 
-.plant:after {
-  content: "";
-  display: block;
-  padding-bottom: 20%;
-}
 
 /* ***********창 전환 효과************** */
 #loader {

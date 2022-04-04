@@ -21,6 +21,15 @@ input[type=text] {
   display: inline-block;
 }
 
+.plant {
+  display: flex;
+  flex-direction: column;
+}
+
+.ddd {
+  align-self:flex-end;
+}
+
 .answer {
   color: red;
 }

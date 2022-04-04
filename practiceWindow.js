@@ -50,41 +50,49 @@ function makeBlank(key, answer) {
   
 
   var blank = document.createElement("div");
+  blank.className = "plant"
 
   var keyName = document.createElement("p");
   keyName.classList.add("keyName");
   keyName.innerText = key;
 
   var input = document.createElement("input");
+  input.classList.add("form-control");
   input.type = "text";
-  input.setAttribute("size", 10);
   input.setAttribute("ans", answer);
   
+  var row = document.createElement("div");
+  row.className = "ddd";
 
   var submit = document.createElement("button");
   submit.classList.add("btn-primary");
+  submit.classList.add("submit");
+  submit.classList.add("col-xs-1");
   submit.innerText = "submit";
   submit.addEventListener("click", submitBlank, false);
   
   var clear = document.createElement("button");
+  clear.classList.add("clear");
   clear.innerText = "clear";
   clear.addEventListener("click", clearBlank, false);
+
+  row.append(submit);
+  row.append(clear);
 
   var ans = document.createElement("p");
   ans.setAttribute("class", "answer");
   
   blank.append(document.createElement("hr"));
   blank.append(keyName);
+  blank.append(row);
   blank.append(input);
-  blank.append(submit);
-  blank.append(clear);
   blank.append(ans);
-  blanks.append(blank);
+  blanks.append(blank); 
 }
 
 function submitBlank() {
-  var blank = event.target.previousSibling;
-  var ans = event.target.nextSibling.nextSibling;
+  var blank = event.target.parentNode.nextSibling;
+  var ans = event.target.parentNode.nextSibling.nextSibling;
 
   if (blank.value == "")
     blank.value = blank.getAttribute("ans");
@@ -93,12 +101,13 @@ function submitBlank() {
   else {
     blank.classList.add("incollect");
     ans.innerText = blank.getAttribute("ans");
+
   }
 }
 
 function clearBlank() {
-  var blank = event.target.previousSibling.previousSibling;
-  var ans = event.target.nextSibling;
+  var blank = event.target.parentNode.nextSibling;
+  var ans = event.target.parentNode.nextSibling.nextSibling;
   blank.value = "";
   ans.innerText = "";
 }
