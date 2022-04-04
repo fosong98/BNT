@@ -20,7 +20,7 @@ function start() {
     plant.className = "plant bg-primary";
     var jsonString = localStorage.getItem(i);
     plant.setAttribute("value", jsonString);
-    plant.setAttribute("onclick", "clicked()");
+    plant.setAttribute("onmousedown", "clicked()");
     plant.innerText = JSON.parse(jsonString).Cultivar;
     plants.append(plant);
   }
