@@ -51,11 +51,12 @@ function makeBlank(key, answer) {
   var blank = document.createElement("div");
 
   var keyName = document.createElement("p");
+  keyName.classList.add("keyName");
   keyName.innerText = key;
 
   var input = document.createElement("input");
   input.type = "text";
-  input.setAttribute("size", 17);
+  input.setAttribute("size", 10);
   input.setAttribute("ans", answer);
   
 
