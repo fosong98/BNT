@@ -29,9 +29,10 @@ function chooseOne() {
 }
 
 function uploading(index) {
-  blanks.childNodes.forEach((e)=>{
-    e.remove();
-  })
+  var cell = document.getElementById("blanks");
+   while ( cell.hasChildNodes() )
+   { cell.removeChild( cell.firstChild ); }
+
   var obj = JSON.parse(plants[index]);
   var k = Object.keys(obj);
   for (var i = 0; i < k.length; ++i) {
