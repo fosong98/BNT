@@ -22,16 +22,7 @@ function readExcel() {
       console.log('SheetName: ' + sheetName);
       let rows = XLSX.utils.sheet_to_json(workBook.Sheets[sheetName]);
       for (let step = 0; step < rows.length - 1; step++) {
-        var map = new Map();
-        map.set(rows[0].__EMPTY, rows[step + 1].__EMPTY);
-        map.set(rows[0].__EMPTY_1, rows[step + 1].__EMPTY_1);
-        map.set(rows[0].__EMPTY_2, rows[step + 1].__EMPTY_2);
-        map.set(rows[0].__EMPTY_3, rows[step + 1].__EMPTY_3);
-        map.set(rows[0].__EMPTY_4, rows[step + 1].__EMPTY_4);
-        map.set(rows[0].__EMPTY_5, rows[step + 1].__EMPTY_5);
-        const obj = Object.fromEntries(map);
-      
-        localStorage.setItem(step, JSON.stringify(obj))
+        localStorage.setItem(step, JSON.stringify(rows[step]))
       }
       localStorage.setItem("ending", localStorage.length)
       document.getElementById("upload").innerText = "업로드 완료";
