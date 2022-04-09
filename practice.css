@@ -3,19 +3,36 @@
   position: relative;
 }
 
-
 .plant {
+  border-radius: 50%;
+  text-align: center;
   height: 100px;
-  padding: 21px;
+  padding: 20px;
   font-size: 100%;
   display: inline-flex;
   flex-direction: column;
   align-items:stretch;
   width: 33%;
-  max-width: 130px;
-  color: white;
+  max-width: 100px;
+  color: black;
   position: relative;
   transition: transform 500ms;
+}
+
+#head {
+  width: 100%;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.primary {
+  border: #007BFF solid;
+}
+
+.success {
+  background: #007BFF;
+  color : white;
 }
 
 

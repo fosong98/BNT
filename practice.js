@@ -4,7 +4,7 @@ window.addEventListener("load", reload, false);
 function start() {
   setTimeout(()=>{
   document.body.setAttribute("class", "reveal");},
-  500);
+  300);
 
   setTimeout(()=>{
     document.getElementById("plants").classList.add("visible");
@@ -17,7 +17,7 @@ function start() {
   for (var i = 0; i < count; ++i) {
     var plant = document.createElement("div");
     plant.id = i.toString();
-    plant.className = "plant bg-primary";
+    plant.className = "plant primary";
     var jsonString = localStorage.getItem(i);
     plant.setAttribute("value", jsonString);
     plant.setAttribute("onmousedown", "clicked()");
@@ -29,44 +29,44 @@ function start() {
 
 function clicked() {
   var plant = event.target;
-  if (plant.classList.contains("bg-primary")) {
-    plant.classList.remove("bg-primary");
-    plant.classList.add("bg-success");
+  if (plant.classList.contains("primary")) {
+    plant.classList.remove("primary");
+    plant.classList.add("success");
   } else {
-    plant.classList.add("bg-primary");
-    plant.classList.remove("bg-success");
+    plant.classList.add("primary");
+    plant.classList.remove("success");
   }
 }
 
 function chooseAll() {
-  var choosed = document.getElementsByClassName("bg-primary");
+  var choosed = document.getElementsByClassName("primary");
   
   for (var i = 0; i < choosed.length;++i) { 
-    choosed.item(i).classList.add("bg-success");
+    choosed.item(i).classList.add("success");
   }
   
-  choosed = document.getElementsByClassName("bg-success");
+  choosed = document.getElementsByClassName("success");
 
   for (var i = 0; i < choosed.length;++i) { 
     var t = choosed.item(i); 
-    if (t.classList.contains("bg-primary"))
-      t.classList.remove("bg-primary");
+    if (t.classList.contains("primary"))
+      t.classList.remove("primary");
   }
 }
 
 function releaseAll() {
-  var release = document.getElementsByClassName("bg-success");
+  var release = document.getElementsByClassName("success");
   
   for (var i = 0; i < release.length;++i) { 
-    release.item(i).classList.add("bg-primary");
+    release.item(i).classList.add("primary");
   }
   
-  release = document.getElementsByClassName("bg-primary");
+  release = document.getElementsByClassName("primary");
 
   for (var i = 0; i < release.length;++i) { 
     var t = release.item(i); 
-    if (t.classList.contains("bg-success"))
-      t.classList.remove("bg-success");
+    if (t.classList.contains("success"))
+      t.classList.remove("success");
   }
 }
 
@@ -76,7 +76,7 @@ function confirm() {
   var index = count;
   for (var i = 0; i < count; ++i) {
     console.log(plants[i].classList.toString());
-    if (plants[i].classList.contains("bg-success")) {
+    if (plants[i].classList.contains("success")) {
       var val = plants.item(i).getAttribute("value");
       localStorage.setItem(parseInt(index), val);
       index++;

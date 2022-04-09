@@ -68,12 +68,12 @@ function makeBlank(key, answer) {
   submit.classList.add("btn-primary");
   submit.classList.add("submit");
   submit.classList.add("col-xs-1");
-  submit.innerText = "submit";
+  submit.innerText = "제출";
   submit.addEventListener("click", submitBlank, false);
   
   var clear = document.createElement("button");
   clear.classList.add("clear");
-  clear.innerText = "clear";
+  clear.innerText = "비움";
   clear.addEventListener("click", clearBlank, false);
 
   row.append(submit);
@@ -118,4 +118,16 @@ function goBack() {
     localStorage.removeItem(i);
   }
   window.location.replace("practice.html");
+}
+
+function allSubmit() {
+  var submits = document.getElementsByClassName("submit");
+  for (var i = 0; i < submits.length; ++i)
+    submits[i].click();
+}
+
+function allClear() {
+  var clears = document.getElementsByClassName("clear");
+  for (var i = 0; i < clears.length; ++i)
+    clears[i].click();
 }
